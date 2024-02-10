@@ -8,7 +8,7 @@ local Chat = PlayerGui:FindFirstChild("Chat")
 local ChatBar = Chat and Chat:FindFirstChild("ChatBar", true)
 local Remote = RStorage:FindFirstChild("SayMessageRequest", true)
 
-local Connection = Instance.new("RemoteFunction")
+local Connection = Instance.new("BindableFunction")
 
 for _,v in next, getconnections(ChatBar.FocusLost) do
 	v:Disconnect()
@@ -18,7 +18,7 @@ ChatBar.FocusLost:Connect(function(enterPressed)
 	if enterPressed then
 		local Message = ChatBar.Text
 		ChatBar.Text = ""
-		Connection:InvokeServer(Message)
+		Connection:Fire(Message)
 	end
 end)
 
