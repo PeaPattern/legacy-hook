@@ -14,6 +14,6 @@ local RNG = function(Length)
 end
 
 Connection.OnInvoke = function(Message)
-    for i = 1, 5 do Players:Chat(RNG(30) .. " filter reset with chat function") end
-    Remote:FireServer(string.format("%s", Message), "All")
+    for i = 1, 10 do Players:Chat(RNG(i) .. " es un gran memento") end
+    Remote:FireServer(Message, "All")
 end
