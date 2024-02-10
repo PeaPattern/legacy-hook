@@ -5,7 +5,7 @@ local LocalPlayer = Players.LocalPlayer
 local PlayerGui = LocalPlayer.PlayerGui
 
 local Chat = PlayerGui:FindFirstChild("Chat")
-local ChatBar = Chat:FindFirstChild("ChatBar", true)
+local ChatBar = Chat and Chat:FindFirstChild("ChatBar", true)
 local Remote = RStorage:FindFirstChild("SayMessageRequest", true)
 
 local Connection = Instance.new("RemoteFunction")
