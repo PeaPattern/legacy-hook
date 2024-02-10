@@ -18,7 +18,7 @@ ChatBar.FocusLost:Connect(function(enterPressed)
 	if enterPressed then
 		local Message = ChatBar.Text
 		ChatBar.Text = ""
-		Connection:Fire(Message)
+		Connection:Invoke(Message)
 	end
 end)
 
